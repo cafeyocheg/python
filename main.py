@@ -256,6 +256,80 @@
 # print(int_func(string.split()))
 ...
 
+# LESSON 4
+
+# #1
+# def salary():
+#     try:
+#         time = float(input('Ваше время: '))
+#         hour_rate = float(input('Почасовая ставка: '))
+#         prize = float(input('Премия: '))
+#         result = ((time * hour_rate) + prize) * 0.87
+#         print(f"Ваша заработная плата c вычетом НДС составит: {result}")
+#     except ValueError:
+#         print("Это не число!")
+# salary()
+
+# #2
+# list = [23, 21, 77, 343, 9000, 32, 766]
+# new_list = [el for ind, el in enumerate(list) if list[ind] > list[ind-1]]     #даст генератор счётчик(ind)+элемент(el) для элементов list
+# print(f'Исходный список {list}')
+# print(f'Новый список {new_list}')
+
+#3
+# print([el for el in range(20, 241) if el % 20 == 0 or el % 21 == 0])
+
+#4
+# list1 = [23, 212, 88, 765, 90, 433, 433, 65, 2, 2, 54, 34, 34, 88, 33, 90]
+# print(f'Список: {list1}')
+# print(f"Числа из списка без повторений: {[el for el in list1 if list1.count(el) == 1]}")
+
+#5
+# from functools import reduce
+#
+# def umnozhenie(el1, el2):
+#     return el1 * el2
+#
+# print(f'Результат умножения всех элементов списка: {reduce(umnozhenie, [el for el in range(100, 1001) if el % 2 == 0])}')
+
+#6a
+# import itertools
+# for i in itertools.count(100, 2):
+#     print(i)
+#
+#     if i >= 105:
+#         break
+
+#6b
+# import itertools
+#
+# c = 0
+# for a in itertools.cycle('empire'):
+#     if c >= 12:
+#         break
+#     print(a)
+#     c += 1
+
+#7
+from itertools import count
+from math import factorial
+
+def generator():
+    for el in count(1):
+        yield factorial(el)
+
+gen = generator()
+c = 0
+for i in gen:
+    if c > 5:                                   # n = 5
+        break
+    print(i)
+    c += 1
+
+    
+
+
+
 
 
 
