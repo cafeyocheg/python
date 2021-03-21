@@ -310,21 +310,170 @@
 #     print(a)
 #     c += 1
 
+# #7
+# from itertools import count
+# from math import factorial
+#
+# def generator():
+#     for el in count(1):
+#         yield factorial(el)
+#
+# gen = generator()
+# c = 0
+# for i in gen:
+#     if c > 5:                                   # n = 5
+#         break
+#     print(i)
+#     c += 1
+...
+
+...
+# LESSON 5
+
+#1
+# out_file = open("my_text.txt", "x")
+# out_file.writelines(input("Запись в файл следующего: "))
+# print("")
+# out_file.close
+
+#2
+# my_text2.txt
+# I was following the
+# I was following the pack
+# All swallowed in their coats
+# With scarves of red tied round their throats
+
+# f = open("my_text2.txt", "r")
+# content = f.read()
+# print(f'Что в файле: \n{content}')
+#
+# f = open("my_text2.txt", "r")
+# content = f.readlines()
+# print(f'Количество строк: {len(content)}')
+#
+# f = open("my_text2.txt", "r")
+# content = f.readlines()
+# for el in range(len(content)):
+#     print(f'Количество слов в {el} строке: {len(content[el].split())}')
+#
+# f.close
+
+#3
+# my_text
+# Понасенков 250000
+# Оклугин 20000
+# Валерианкова 195750
+# Карташев 9200
+# Младший 19500
+
+# with open("my_text.txt", "r") as f:
+#     content = f.read().split('\n')
+#     print(content)
+#     success = []
+#     unsuccess = []
+#     salary = []
+#     for el in content:
+#         el = el.split()
+#         if int(el[1]) <= 20000:
+#             unsuccess.append(el[0])
+#         else:
+#             success.append(el[0])
+#         salary.append(el[1])
+#     average_salary = sum(map(int, salary)) / len(salary)
+#     print(f"Сотрудники с окладом меньше 20000: {unsuccess}, сотрудники с окладом больше 20000: {success}")
+#     print(f"Средний оклад сотрудников: {average_salary}")
+
+#4
+# to_rus = {'One': 'Один', 'Two': 'Два', 'Three': 'Три', 'Four': 'Четыре'}    #словарь перевода en в ru
+# newfile = []                                                  #в новый файл
+# with open('my_text3.txt', 'r') as f:
+#     content = f.read().split('\n')                      #разделил содержимое по переносу строки
+#     print(content)
+#     for el in content:
+#         el = el.split(' ', 1)                          #разделил каждый 'one - 1' по пробелу через 1
+#         newfile.append(to_rus[el[0]] + ' ' + el[1])    #добавил в новый список ключ en
+#     print(newfile)
+#
+# with open('my_text4.txt', 'w') as f2:
+#     f2.writelines(newfile)
+
+#5
+# def summary():
+#     try:
+#         with open('my_text5.txt', 'w') as f:
+#             line = input('Введите цифры через пробел: ')
+#             f.writelines(line)
+#             numbers = line.split()                               #разделил на числа
+#
+#             print(sum(map(int, numbers)))                         #каждый элемент превратит в int, суммирует
+#     except ValueError:
+#         print('Ошибка ввода-вывода, введены не цифры и даже не числа')
+# summary()
+
+#6
+# my_text6.txt
+# Информатика 100 50 20
+# Физика 30 70 00
+# Химия 30 00 00
+# Гончарство 190 10 00
+
+# hours = {}
+# with open('my_text6.txt', 'r') as f:
+#     for line in f:
+#         subject, lect, pract, lab = line.split()
+#         hours[subject] = int(lect) + int(pract) + int(lab)
+#     print(f'количество занятий по предмету - \n {hours}')
+
+
 #7
-from itertools import count
-from math import factorial
+# my_text7.txt
+# firm_1 ООО 10000 5000
+# firm_2 ООО 20100 29000
+# firm_3 ООО 78000 2000
+# firm_4 ООО 10500 75000
+# firm_5 ООО 99000 0
 
-def generator():
-    for el in count(1):
-        yield factorial(el)
+# import json
+#
+# profit = {}
+# all_profit = 0
+# average_profit = 0
+# numb_plus_firm = 0
+# with open('my_text7.txt', 'r') as f:
+#     for line in f:
+#         name, form, plus, minus = line.split()
+#         profit[name] = int(plus) - int(minus)
+#         if profit.setdefault(name) >= 0:
+#             all_profit = all_profit + profit.setdefault(name)
+#             numb_plus_firm += 1
+#     if numb_plus_firm != 0:
+#         average_profit = all_profit / numb_plus_firm
+#         print(f'Cредняя прибыль фирм вышедших в плюс - {average_profit:.2f}')
+#     else:
+#         print(f'Прибыли вообще нет, все фирмы в убытке')
+#     pr = {'средняя прибыль': round(average_profit)}
+#     profit.update(pr)
+#     # profit = list(profit)
+#     print(f'Прибыль каждой компании - {profit}')                    #в список этот кортеж не получается поместить
+#
+# with open('my_text7.json', 'w') as f_js:
+#     json.dump(profit, f_js)
+#
+#     js_str = json.dumps(profit)
+#     print(f'Создан файл .json: \n 'f'{js_str}')
+...
 
-gen = generator()
-c = 0
-for i in gen:
-    if c > 5:                                   # n = 5
-        break
-    print(i)
-    c += 1
+
+
+
+
+
+
+
+
+
+
+
 
     
 
