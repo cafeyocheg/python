@@ -463,6 +463,196 @@
 #     print(f'Создан файл .json: \n 'f'{js_str}')
 ...
 
+...
+# LESSON 6
+#1
+# import time
+# from time import sleep
+#
+# class TrafficLight:
+#     __color = ["red", "yellow", "green"]
+#
+#     def running(self):
+#         print('Lets start')
+#         color = 0
+#         while color < 3:
+#             print(f'Traffic light is {TrafficLight.__color[color]}')
+#             if color == 0:
+#                 sleep(7)
+#             elif color == 1:
+#                 sleep(5)
+#             elif color == 2:
+#                 sleep(30)
+#             color += 1
+#         else:
+#             print("Something is wrong here")
+#
+# TrafficLight = TrafficLight()
+# TrafficLight.running()
+
+# #2
+# class Road:
+#     def __init__(self, _length, _width, _mass_to_1cm, _thickness):
+#         self._length = _length
+#         self._width = _width
+#         self._mass_to_1cm = _mass_to_1cm
+#         self._thickness = _thickness
+#
+#     def mass(self):
+#         return self._length * self._width * self._thickness * self._mass_to_1cm
+#
+#
+# result = Road(5000, 5, 5, 5)                   # длина 5000м, ширина 5м, на 1см - 5кг, толщина 5см
+# print(result.mass())
+
+#3
+# class Worker:
+#     def __init__(self, name, surname, position, _income):
+#         self.name = name
+#         self.surname = surname
+#         self.position = position
+#         self._income = {"wage": wage, "bonus": bonus}
+#
+# class Position(Worker):
+#     def __init__(self, name, surname, position, wage, bonus):
+#         self.name = name
+#         self.surname = surname
+#         self.position = position
+#         self.wage = wage
+#         self.bonus = bonus
+#
+#     def get_full_name(self):
+#         return self.name + ' ' + self.surname
+#
+#     def get_total_income(self):
+#         return self.wage + self.bonus
+#
+# worker1 = Position('Yes', 'Ornot', 'Self-entertainer', 250000, 125000)
+# print(worker1.get_full_name())
+# print(worker1.position)
+# print(worker1.get_total_income())
+
+#4
+# class Car:
+#     def __init__(self, speed, color, name, is_police):
+#         self.speed = speed
+#         self.color = color
+#         self.name = name
+#         self.is_police = is_police
+#
+#     def go(self):
+#         return f'{self.name} is gone mad'
+#
+#     def stop(self):
+#         return f'{self.name} has stoped'
+#
+#     def turn_left(self):
+#         return f'{self.name} omg TUUUUURNS left!'
+#
+#     def turn_right(self):
+#         return f'{self.name} goes all right'
+#
+#     def show_speed(self):
+#         return f'Your current speed is {self.speed}'
+#
+# class TownCar(Car):
+#     def __init__(self, speed, color, name, is_police):
+#         self.speed = speed
+#         self.color = color
+#         self.name = name
+#         self.is_police = is_police
+#
+#     def show_speed(self):
+#         print(f'Current speed of town car {self.name} is {self.speed}')
+#
+#         if self.speed > 60:
+#             return f'Goddamn! Your speed is {self.speed}! Slow down!'
+#         else:
+#             return f'Speed of {self.name} is okay. For now.'
+#
+#     def police(self):
+#         if self.is_police:
+#             return f'{self.name} is from police department. Please show us your documents'
+#         else:
+#             return f'{self.name} is not from police department'
+#
+# class WorkCar(Car):
+#     def __init__(self, speed, color, name, is_police):
+#         self.speed = speed
+#         self.color = color
+#         self.name = name
+#         self.is_police = is_police
+#
+#     def show_speed(self):
+#         print(f'Current speed of your car {self.name} is {self.speed}')
+#
+#         if self.speed > 40:
+#             return f'Speed of {self.name} is higher than allowed, sir. Please reduce the speed to the recommended level'
+#         else:
+#             return f'Speed of {self.name} is okay. Thank you, drive freely'
+#
+#     def police(self):
+#         if self.is_police:
+#             return f'{self.name} is from police department. Please show us your documents'
+#         else:
+#             return f'{self.name} is not from police department'
+#
+# class PoliceCar(Car):
+#     def __init__(self, speed, color, name, is_police):
+#         self.speed = speed
+#         self.color = color
+#         self.name = name
+#         self.is_police = is_police
+#
+#     def police(self):
+#         if self.is_police:
+#             return f'{self.name} is from police department. Please show us your documents'
+#         else:
+#             return f'{self.name} is not from police department'
+#
+#
+# TownCar1 = TownCar(150, 'White', 'Accelerator3000', is_police=False)
+# print(TownCar1.show_speed())
+# print(TownCar1.police())
+# print(TownCar1.go())
+
+
+# #5
+# class Stationary:
+#     def __init__(self, title):
+#         self.title = title
+#
+#     def draw(self):
+#         return f'Start rendering {self.title}'
+#
+# class Pen(Stationary):
+#     def __init__(self, title):
+#         self.title = title
+#
+#     def draw(self):
+#         return f'{self.title} is in your hands. Start rendering by pen!'
+#
+# class Pencil(Stationary):
+#     def __init__(self, title):
+#         self.title = title
+#
+#     def draw(self):
+#         return f'{self.title} is in your hands. Start rendering by pencil!'
+#
+# class Handle(Stationary):
+#     def __init__(self, title):
+#         self.title = title
+#
+#     def draw(self):
+#         return f'{self.title} is in your hands. Start rendering by handle!'
+#
+# pen1 = Pen('The pen')
+# pencilW = Pencil('The pencil')
+# handleF = Handle('The handle')
+# print(pen1.draw())
+# print(pencilW.draw())
+# print(handleF.draw())
+...
 
 
 
