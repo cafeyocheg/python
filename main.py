@@ -654,38 +654,112 @@
 # print(handleF.draw())
 ...
 
+...
+# LESSON 7
+# 1
+# class Matrix:
+#     def __init__(self, list_1, list_2):                     #аргументы - два объекта
+#         self.list_1 = list_1
+#         self.list_2 = list_2
+#
+#     def __add__(self):
+#         new_matr = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+#
+#         for i in range(len(self.list_1)):
+#             for j in range(len(self.list_1[i])):
+#                 new_matr[i][j] = self.list_1[i][j] + self.list_2[i][j]
+#         return str('\n'.join(['\t'.join([str(j) for j in i]) for i in new_matr]))
+#
+#     # def __str__(self):
+#     #     return str('\n'.join(['\t'.join([str(j) for j in i]) for i in new_matr]))
+#
+# my_matrix = Matrix([[19, 18, 17], [16, 15, 14], [13, 12, 11]], [[11, 12, 13], [14, 15, 16], [17, 18, 19]])
+# print(my_matrix.__add__())
 
 
+# #2
+# class Clothes:
+#     def __init__(self, width, height):
+#         self.width = width
+#         self.height = height
+#
+#     def get_square_coat(self):
+#         return self.width / 6.5 + 0.5
+#
+#     def get_square_suit(self):
+#         return self.height * 2 + 0.3
+#
+#     @property                                 # декоратор сделал функцию атрибутом
+#     def get_full_square(self):
+#         return str(f'FULL square is: {float(self.width / 6.5 + 0.5) + float(self.height * 2 + 0.3)}')
+#
+# class Coat(Clothes):
+#     def __init__(self, width, height):
+#         super().__init__(width, height)                         # Одежда отдала функцию init Пальто
+#         self.square_coat = float(self.width / 6.5 + 0.5)
+#
+#     def __str__(self):            # площадь ткани для пальто
+#         return f'Square of coat is {self.square_coat}'
+#
+# class Suit(Clothes):
+#     def __init__(self, width, height):
+#         super().__init__(width, height)
+#         self.square_suit = float(self.height * 2 + 0.3)
+#
+#     def __str__(self):                # площадь ткани для костюма
+#         return f'Square of suit is {self.square_suit}'
+#
+# coatA = Coat(6.5, 2)
+# suitA = Suit(3, 1.5)
+# clothes = Clothes(6.5, 1.5)
+#
+# print(coatA)
+# print(suitA)
+# print(suitA.get_square_suit())
+# print(coatA.get_square_coat())
+# print(clothes.get_full_square)
 
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#3
+# class Cell:
+#     def __init__(self, quantity):
+#         self.quantity = int(quantity)
+#
+#     def __str__(self):
+#         return f'{self.quantity * "@"}'
+#
+#     def __add__(self, other):
+#         return Cell(self.quantity + other.quantity)
+#
+#     def __sub__(self, other):                          # находит разницу двух клеток независимо от того где ячеек больше
+#         if self.quantity > other.quantity:
+#             return Cell(self.quantity - other.quantity) if self.quantity - other.quantity > 0 else "отрицательное значение!"
+#         else:
+#             return Cell(other.quantity - self.quantity) if other.quantity - self.quantity > 0 else "отрицательное значение!"
+#
+#     def __truediv__(self, other):
+#         if self.quantity > other.quantity:
+#             return Cell(self.quantity // other.quantity)
+#         else:
+#             return Cell(other.quantity // self.quantity)
+#
+#     def __mul__(self, other):
+#         return Cell(int(self.quantity * other.quantity))
+#
+#     def make_order(self, one_row_cells):             # one_row_cells - сколько ячеек в 1 ряду, по 5
+#         row = '\n'
+#         for i in range(int(self.quantity / one_row_cells)):
+#             row += f'{"@" * one_row_cells} \n'                         # заполненные ряды
+#         row += f'{"@" * (self.quantity % one_row_cells)}'              # остатки (неполный ряд)
+#         return row
+#
+# cells1 = Cell(18)
+# cells2 = Cell(3)
+# print(f'first cell looks like this: {cells1}')
+# print(f'second cell looks like this: {cells2}')
+# print(f'cell sum is: {cells1 + cells2}')
+# print(f'cell subtraction is: {cells1 - cells2}')
+# print(f'cell division is: {cells1 / cells2}')
+# print(f'cell multiplication is: {cells1 * cells2}\n')
+#
+# print(cells1.make_order(5))
+# print(cells2.make_order(5))
