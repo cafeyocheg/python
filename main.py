@@ -763,3 +763,182 @@
 #
 # print(cells1.make_order(5))
 # print(cells2.make_order(5))
+...
+
+...
+# LESSON 8
+
+# 1
+# class Data:
+#     def __init__(self, date):                       # date = 03/04/1992
+#         self.date = str(date)
+#
+#     @classmethod
+#     def make_int(cls, date):
+#         int_date = []
+#
+#         for el in date.split('/'):
+#             if el != '/': int_date.append(el)
+#
+#         return int(int_date[0]), int(int_date[1]), int(int_date[2])
+#
+# # print(Data.make_int('03/04/1995'))
+#
+#     @staticmethod
+#     def validate(day, month, year):
+#
+#         if 1 <= day <= 31:
+#             if 1 <= month <= 12:
+#                 if 2021 >= year >= 0:
+#                     return f'everything is correct'
+#                 else:
+#                     return f'the year is wrong'
+#             else:
+#                 return f'the year is wrong'
+#         else:
+#             return f'the day is wrong'
+#
+#
+#     def __str__(self):
+#         return f'The date is {Data.make_int(self.date)}'
+#
+# today = Data('3/4/1995')
+# # print(today)
+# print(f'lets check out... {today.validate(3, 4, 20000)}')
+# print(f'lets check out... {today.validate(3, 4, 1995)}')
+# print(Data.make_int('3/4/1995'))
+# print(today.make_int('3/4/1995'))
+
+# 2
+# class ZeroDivisionErrr(Exception):
+#     def __init__(self, txt):
+#         self.txt = txt
+#
+#
+# a = input("Input first number here... ")
+# b = input("Input second number here... ")
+#
+# try:
+#     a = int(a)
+#     b = int(b)
+#     if b == 0:
+#         raise ZeroDivisionErrr("You cant do dat, second number is zero")
+# except ZeroDivisionErrr as e:
+#     print(e)
+# except ValueError:
+#     print('Numbers! Input numbers!')
+# else:
+#     print(f"Okay, youve done no mistake, so division result is {a / b}")
+
+
+#3
+# class Error:
+#     def __init__(self, *args):
+#         self.my_list = []
+#
+#     def input(self):
+#
+#         while True:
+#             try:
+#                 things = int(input('Please input numbers but not text or True/False here: '))
+#                 self.my_list.append(things)
+#                 print(f'The input things are: {self.my_list}')
+#             except:
+#                 print('I see strings or bullthings, try again')
+#
+# tryout = Error()
+# print(tryout.input())
+#
+
+#4-6
+# class StockDescribe:
+#     pass
+#
+# class Technique:
+#     def __init__(self, name, quantity, list_units, *args):
+#         self.name = name
+#         self.quantity = quantity
+#         self.list_units = list_units
+#         self.machines = {'Machine model': self.name, 'Quantity': self.quantity, 'List units': list_units}
+#         self.store = []
+#
+#     def accept(self):
+#         try:
+#             unit = input(f'Machine name: ')
+#             unit_quantity = int(input(f'Quantity: '))
+#             name_quantity = {'Machine name': unit, 'Quantity': unit_quantity}
+#
+#             self.machines.update(name_quantity)
+#             self.store.append(self.machines)
+#             print(f'The list: {self.store}')
+#         except:
+#             return f'Error'
+#
+#     def deliver(self):
+#         pass
+#
+# class Printer(Technique):
+#     def __init__(self):
+#         super().__init__('Ex-wife 2.0', 1, 200)
+#
+#     def print(self):
+#         return f'Start printing...'
+#
+# class Scanner(Technique):
+#     def __init__(self):
+#         super().__init__('T-800', 1, 900)
+#
+#     def scan(self):
+#         return f'Start scanning...'
+#
+# class Xerox(Technique):
+#     def __init__(self):
+#         super().__init__('Xerox3000', 23, 1000)
+#
+#
+#     def copy(self):
+#         return f'Start copying...'
+#
+#
+# machine1 = Xerox()
+# machine2 = Scanner()
+# machine3 = Printer()
+#
+# print(machine1.accept())
+# print(machine1.copy())
+#
+# print(machine2.accept())
+# print(machine2.scan())
+#
+# print(machine3.accept())
+# print(machine3.print())
+
+#7 Operations with complex numbers
+#
+# class ComplexNumber:
+#     def __init__(self, a, b, *args):
+#         self.a = a
+#         self.b = b
+#         # self.mul = a * b
+#         # self.div = a / b
+#         # self.sum = a + b
+#         # self.sub = a - b
+#
+#     def __add__(self, other):
+#         print('When summarized: ')
+#         return ComplexNumber(self.a + other.a, self.b + other.b)
+#
+#
+#     def __mul__(self, other):
+#         print(f'\nWhen multiplicated: ')
+#         return ComplexNumber(self.a * other.a, self.b * other.b)
+#
+#     def __str__(self):
+#         return f'Operation result is ({self.a}, {self.b})'
+#
+#
+# obj_1 = ComplexNumber(188, 2/3)
+# obj_2 = ComplexNumber(-90.231, 0.000000009)
+# print(obj_1 + obj_2)
+# print(obj_1 * obj_2)
+...
